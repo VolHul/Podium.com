@@ -58,7 +58,7 @@ public class PodiumSmokeTest {
         loginPage.passwordField.sendKeys(ConfigReader.getProperty("password"));
         loginPage.passwordField.sendKeys(Keys.ENTER);
         Helper.waitForElementToBeDisplayed(loginPage.errorMessage);
-        Helper.longHighlightElement(loginPage.errorMessage);
+        Helper.highlightElement(loginPage.errorMessage,1000);
         Assert.assertEquals("Incorrect email or password. Please try again."
                 ,loginPage.errorMessage.getText());
     }
@@ -87,7 +87,7 @@ public class PodiumSmokeTest {
         Helper.waitForElementToBeDisplayed(homePage.iFramePrompt);
         driver.switchTo().frame(homePage.iFramePrompt);
         Assert.assertEquals("Hi there, have a question? Text us here.",homePage.widgetMessage.getText());
-        Helper.longHighlightElement(homePage.widgetMessage);
+        Helper.highlightElement(homePage.widgetMessage,1000);
         homePage.widgetMessage.click();
         driver.switchTo().frame(homePage.iFrameWidget);
         Assert.assertTrue("Element not present",Helper.isDisplayedCustom(homePage.widgetInputName));
@@ -104,7 +104,7 @@ public class PodiumSmokeTest {
         Helper.waitForElementToBeDisplayed(demoPage.userEmailField);
         demoPage.fillOutForm();
         Helper.waitForElementToBeDisplayed(demoVideoPage.thankYouMessage);
-        Helper.longHighlightElement(demoVideoPage.thankYouMessage);
+        Helper.highlightElement(demoVideoPage.thankYouMessage,1000);
         Assert.assertEquals("Thanks for watching! We'll be in touch.",
                 demoVideoPage.thankYouMessage.getText());
     }

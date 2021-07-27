@@ -19,21 +19,17 @@ public class Helper {
                 .until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void waitForElementToBeClickable(WebElement element){
-        new WebDriverWait(Driver.getDriver(), 10)
-                .until(ExpectedConditions.elementToBeClickable(element));
-    }
-
     public static boolean isDisplayedCustom(WebElement element) throws InterruptedException {
         waitForElementToBeDisplayed(element);
         boolean isDisp = element.isDisplayed();
         highlightElement(element);
         return isDisp;
     }
-    public static void longHighlightElement(WebElement element) throws InterruptedException {
+
+    public static void highlightElement(WebElement element,int timeOut) throws InterruptedException {
         String style = "border: 4px dashed red";
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, style);
-        Thread.sleep(1000);
+        Thread.sleep(timeOut);
     }
 }

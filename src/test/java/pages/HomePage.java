@@ -17,23 +17,20 @@ public class HomePage {
     @FindBy(xpath = "//span[.='Solutions']")
     public WebElement solutionsTab;
 
-    @FindBy(linkText = "Enterprise")//(xpath = "//li[contains(@class,'collapse')]/a[.='Enterprise']")
+    @FindBy(linkText = "Enterprise")
     public WebElement enterpriseTab;
 
     @FindBy(xpath = "//span[.='Resources']")
     public WebElement resourcesTab;
 
-    @FindBy(linkText = "Pricing")//(xpath = "//li[contains(@class,'collapse')]/a[.='Pricing']")
+    @FindBy(linkText = "Pricing")
     public WebElement pricingTab;
 
-    @FindBy(linkText = "Login")//(xpath = "//li[contains(@class,'collapse')]/a[.='Login']")
+    @FindBy(linkText = "Login")
     public WebElement loginTab;
 
     @FindBy(xpath="//a[@class='blue-box']")
     public WebElement watchDemoTab;
-
-    @FindBy(xpath = "//ul/li[@class='menu-item']//span[.='Reviews']")
-    public WebElement productsWindow;
 
     @FindBy(xpath = "//maker-button[@href='https://www.podium.com/get-started-v2/']")
     public WebElement getStartedButton;
