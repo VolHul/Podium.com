@@ -12,4 +12,7 @@ public class DemoVideoPage {
 
     @FindBy(xpath = "//h1[contains(text(),'Thanks for watching!')]")
     public WebElement thankYouMessage;
+
+    @FindBy(xpath = "//iframe[@id='player0']")
+    public WebElement videoPlayer;
 }
